@@ -13,12 +13,12 @@ import numpy as np
 from Particle3D import Particle3D as P
 from MIC import vecsep 
 
-print vecsep
+
 # Calculates the force between two particles based on the separation, the cutoff radius and the box dimensions 
-"""
+
 def ljforce (p1,p2,L,r_c):
     # Computes the vector separation of the particles
-    rvector = mic.vecsep(p1,p2)
+    rvector = mic.vecsep(p1,p2,L)
     # Computes the magnitue of the particle separation 
     rscalar = math.sqrt(np.inner(rvector,rvector))
     if rscalar > r_c:
@@ -29,7 +29,7 @@ def ljforce (p1,p2,L,r_c):
 # Calculates the Lennard Jones potential for the particle pair. 			
 def ljpotential(p1,p2,L,r_c):
     # Computes the vector separation of the particles
-    rvector = mic.vecsep(p1,p2)
+    rvector = mic.vecsep(p1,p2,L)
     # Computes the magnitude of the particle separation 
     rscalar = math.sqrt(np.inner(rvector,rvector)
     if rscalar > r_c:
@@ -38,7 +38,7 @@ def ljpotential(p1,p2,L,r_c):
 	return (4*((1/rscalar**12)-(1/(rscalar**6))))*rvector
 
 
-"""
+
 	
 
  
