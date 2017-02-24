@@ -29,7 +29,7 @@ def ljforce(system,boxdim,r_c) :
 	# Compute for i th particle
     for i in range(0, P.N):
 		
-		# With relation to j th particle ---would this count the particles twice?---
+		# With relation to j th particle 
 	for j in range(0, P.N):
 		
 		if j == i:
@@ -78,7 +78,7 @@ def ljpotential(system,boxdim,r_c) :
 	"""
     potential = np.empty(shape={P.N,1})
 	
-	# Compute for i th particle--- P.N+1? ---
+	# Compute for i th particle
     for i in range(0, P.N):
 		
 		# With relation to j th particle
