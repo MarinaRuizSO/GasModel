@@ -9,6 +9,7 @@ Date: 07/02/2017
 
 import numpy as np
 import math
+from LennardJones import LennardJones as lj
 
 
 class ParticleSyst(object) :
@@ -64,8 +65,12 @@ class ParticleSyst(object) :
         """
         energy = 0.0
         for i in range(0, self.N):
-            energy = energy + 0.5*self.mass[i]*self.velmag(self, i)**2
+            energy = energy + 0.5*self.mass[i]*self.velmag(i)**2
         return energy
+
+# Method to compute total energy of the system
+    def energy(self, boxdim, r_c):
+        return self.kineticEnergy() + lj.totPE(self, boxdim, r_c)
 
     # Time integration methods
     # First-order velocity update
