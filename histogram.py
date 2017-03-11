@@ -26,7 +26,7 @@ def particledistances(syst, fileName, k):
     :param dt: time interval
     """
     
-    # Create empty array to hold radial distances from reference particle at each timestep
+    # Create empty array to hold radial distances from reference particle at each timestep (should this be 0,0?)what 
     radialdistance = np.empty([P.N(syst) - 1,1])
     """
     # Open output file for writing
